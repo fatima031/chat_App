@@ -1,7 +1,7 @@
 import 'dart:developer';
-
 import 'package:chat_app/Models/chatRoom_Model.dart';
 import 'package:chat_app/Models/userMode.dart';
+import 'package:chat_app/main.dart';
 import 'package:chat_app/pages/chatRoomPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -21,8 +21,6 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
 
   TextEditingController searchController = TextEditingController();
-  
-  var uuid;
 
   Future<ChatRoomModel?> getChatroomModel(UserModel targetUser) async {
     ChatRoomModel? chatRoom;
@@ -92,8 +90,7 @@ class _SearchPageState extends State<SearchPage> {
               SizedBox(height: 20,),
 
               StreamBuilder(
-                stream: FirebaseFirestore.instance.collection("users").where("email", isEqualTo: searchController.text)
-                .where("email", isNotEqualTo: widget.userModel.email).snapshots(),
+                stream: FirebaseFirestore.instance.collection("users").where("email", isEqualTo: searchController.text).where("email", isNotEqualTo: widget.userModel.email).snapshots(),
                 builder: (context, snapshot) {
                   if(snapshot.connectionState == ConnectionState.active) {
                     if(snapshot.hasData) {
@@ -126,7 +123,7 @@ class _SearchPageState extends State<SearchPage> {
                             backgroundImage: NetworkImage(searchedUser.profilepic!),
                             backgroundColor: Colors.grey[500],
                           ),
-                          title: Text(searchedUser.fullName!),
+                          title: Text(searchedUser.fullname!),
                           subtitle: Text(searchedUser.email!),
                           trailing: Icon(Icons.keyboard_arrow_right),
                         );

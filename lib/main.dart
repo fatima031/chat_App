@@ -7,11 +7,12 @@ import 'package:chat_app/pages/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
 
 // import "package:flutter_web_ui/flutter_web_ui.dart";
 // import 'package:uuid/uuid.dart';
 
-// var uuid = Uuid();
+var uuid = Uuid();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

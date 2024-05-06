@@ -54,7 +54,7 @@ class _SignUpPageState extends State<SignUpPage> {
         uid: uid,
         email: email,
         fullname: "",
-        profileImage: ""
+        profilepic: ""
       );
       await FirebaseFirestore.instance.collection("users").doc(uid).set(newUser.toMap()).then((value) {
         print("New User Created!");
