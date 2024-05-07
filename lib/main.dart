@@ -61,7 +61,7 @@ class MyAppLoggedIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home_Page(userModel: userModel, firebaseUser: firebaseUser),
+      home: HomePage(userModel: userModel, firebaseUser: firebaseUser),
     );
   }
 }

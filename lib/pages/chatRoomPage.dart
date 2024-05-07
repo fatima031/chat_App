@@ -39,7 +39,7 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
       MessageModel newMessage = MessageModel(
           messageid: uuid.v1(),
           sender: widget.userModel.uid,
-          createdon: DateTime.now(),
+          // createdon: DateTime.now(),
           text: msg,
           seen: false);
 
@@ -91,7 +91,7 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
                         .collection("chatrooms")
                         .doc(widget.chatroom.chatroomid)
                         .collection("messages")
-                        .orderBy("createdon", descending: true)
+                        // .orderBy("createdon", descending: true)
                         .snapshots(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.active) {

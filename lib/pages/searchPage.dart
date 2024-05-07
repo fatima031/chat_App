@@ -43,7 +43,12 @@ class _SearchPageState extends State<SearchPage> {
           widget.userModel.uid.toString(): true,
           targetUser.uid.toString(): true,
         },
+        // users: [ widget.userModel.uid.toString(), targetUser.uid.toString()],
+
+        // createdOn: DateTime.now()
       );
+
+
 
       await FirebaseFirestore.instance.collection("chatrooms").doc(newChatroom.chatroomid).set(newChatroom.toMap());
 

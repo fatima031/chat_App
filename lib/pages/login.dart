@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(
           builder: (context) {
-            return Home_Page(userModel: userModel, firebaseUser: credential!.user!);
+            return HomePage(userModel: userModel, firebaseUser: credential!.user!);
           }
         ),
       );

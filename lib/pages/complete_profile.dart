@@ -135,7 +135,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) {
-          return Home_Page(
+          return HomePage(
               userModel: widget.userModel, firebaseUser: widget.firebaseUser);
         }),
       );
